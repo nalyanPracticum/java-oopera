@@ -6,13 +6,13 @@ import person.Director;
 import java.util.ArrayList;
 public class Show {
     private String title;
-    private int duration;
+    private int durationInMinutes;
     Director director;
     ArrayList<Actor> listOfActors;
 
     public Show(String title, int duration, Director director) {
         this.title = title;
-        this.duration = duration;
+        this.durationInMinutes = duration;
         this.director = director;
         this.listOfActors = new ArrayList<>();
     }
