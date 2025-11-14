@@ -2,13 +2,13 @@ package show;
 
 import person.Actor;
 import person.Director;
-
 import java.util.ArrayList;
+
 public class Show {
-    private String title;
-    private int durationInMinutes;
-    Director director;
-    ArrayList<Actor> listOfActors;
+    protected String title;
+    protected int durationInMinutes;
+    protected Director director;
+    protected ArrayList<Actor> listOfActors;
 
     public Show(String title, int duration, Director director) {
         this.title = title;

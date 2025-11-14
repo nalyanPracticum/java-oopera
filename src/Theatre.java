@@ -18,13 +18,15 @@ public class Theatre {
         Person musicAuthor = new Person("Эдуард", "Большой", Gender.MALE);
         Person choreographer = new Person("Елизавета", "Гибкая", Gender.FEMALE);
 
-        String librettoTextOfNewOpera = "Действие происходит в Мемфисе и Фивах во времена владычества фараонов.\n" +
-                "В опере повествуется о несчастной любви предводителя египетских войск Радамеса и рабыни Аиды — \n" +
-                "дочери эфиопского царя, с войсками которого сражаются египтяне.";
-        String librettoTextOfNewBallet = "Принц Зигфрид празднует совершеннолетие в кругу друзей. Его мать\n" +
-                "напоминает ему, что скоро придётся выбирать невесту. После ухода гостей Зигфрид берёт арбалет\n" +
-                "и отправляется на охоту. На озере среди стаи лебедей он видит прекрасного лебедя с печальными глазами.\n" +
-                "Вдруг лебеди превращаются в девушек, среди них королева лебедей Одетта. Принц очарован, он клянётся ей в вечной любви.";
+        String librettoTextOfNewOpera = """
+                Действие происходит в Мемфисе и Фивах во времена владычества фараонов.
+                В опере повествуется о несчастной любви предводителя египетских войск Радамеса и рабыни Аиды —
+                дочери эфиопского царя, с войсками которого сражаются египтяне.""";
+        String librettoTextOfNewBallet = """
+                Принц Зигфрид празднует совершеннолетие в кругу друзей. Его мать напоминает ему, что скоро придётся
+                выбирать невесту. После ухода гостей Зигфрид берёт арбалет и отправляется на охоту. На озере среди
+                стаи лебедей он видит прекрасного лебедя с печальными глазами. Вдруг лебеди превращаются в девушек,
+                среди них королева лебедей Одетта. Принц очарован, он клянётся ей в вечной любви.""";
 
         String titleNewOpera = "Опера Аида";
         String titleNewBallet = "Балет 'Лебединое озеро'";
@@ -41,16 +43,20 @@ public class Theatre {
         newShow.addNewActor(actor1, titleNewShow);
         newShow.addNewActor(actor3, titleNewShow);
 
+        // печать списков актеров
         newOpera.printActorsList(titleNewOpera);
         newBallet.printActorsList(titleNewBallet);
         newShow.printActorsList(titleNewShow);
 
+        // замена одного актёра другим
         newShow.replaceActor(actor1, actor2, titleNewShow);
         newShow.printActorsList(titleNewShow);
 
+        // попытка заменить неучаствующего актёра
         newShow.replaceActor(actor1, actor3, titleNewShow);
         newShow.printActorsList(titleNewShow);
 
+        // печать либретто
         newOpera.printLibrettoText(titleNewOpera);
         newBallet.printLibrettoText(titleNewBallet);
     }
