@@ -3,6 +3,7 @@ package show;
 import person.Actor;
 import person.Director;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Show {
     protected String title;
@@ -41,5 +42,27 @@ public class Show {
         } else {
             System.out.println("\nАктёр " + previousActor + " не участвует в спектакле " + titleOfShow + "!");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Show show = (Show) o;
+        return durationInMinutes == show.durationInMinutes && Objects.equals(title, show.title) && Objects.equals(director, show.director) && Objects.equals(listOfActors, show.listOfActors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, durationInMinutes, director, listOfActors);
+    }
+
+    @Override
+    public String toString() {
+        return "\nShow{" +
+                "title='" + title + '\'' +
+                ", durationInMinutes=" + durationInMinutes +
+                ", director=" + director +
+                ", listOfActors=" + listOfActors +
+                '}';
     }
 }

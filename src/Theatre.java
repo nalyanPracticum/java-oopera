@@ -3,6 +3,7 @@ import person.Director;
 import person.Gender;
 import person.Person;
 import show.Ballet;
+import show.MusicalShow;
 import show.Opera;
 import show.Show;
 
@@ -33,7 +34,7 @@ public class Theatre {
         String titleNewShow = "Горе от ума";
 
         Opera newOpera = new Opera(titleNewOpera, 180, director1, musicAuthor, librettoTextOfNewOpera, 12);
-        Ballet newBallet = new Ballet(titleNewOpera, 140, director2, musicAuthor, librettoTextOfNewBallet, choreographer);
+        Ballet newBallet = new Ballet(titleNewBallet, 140, director2, musicAuthor, librettoTextOfNewBallet, choreographer);
         Show newShow = new Show(titleNewShow, 90, director1);
 
         newOpera.addNewActor(actor1, titleNewOpera);
@@ -59,5 +60,11 @@ public class Theatre {
         // печать либретто
         newOpera.printLibrettoText(titleNewOpera);
         newBallet.printLibrettoText(titleNewBallet);
+
+        System.out.println(newOpera);
+        System.out.println(newBallet);
+        System.out.println(newShow);
+        System.out.println(new MusicalShow("Музыкальный спектакль", 180, director2, musicAuthor, "Либретто музыкального спектакля"));
+
     }
 }
